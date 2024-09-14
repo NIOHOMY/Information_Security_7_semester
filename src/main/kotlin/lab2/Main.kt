@@ -1,40 +1,23 @@
 package lab2
 
+import lab1.Cipher.Cipher
+import lab2.Cipher.VigenereEncryptor
 import java.util.*
 
-class VigenereEncryptor(private val alphabet: List<Char>) {
 
-    fun encode(text: String, key: String): String {
-        return text.indices.joinToString("") { i ->
-            val textChar = text[i]
-            val keyChar = key[i % key.length]
-            alphabet[(indexInAlphabet(textChar) + indexInAlphabet(keyChar)) % alphabet.size].toString()
-        }
-    }
-
-    fun decode(text: String, key: String): String {
-        return encode(text, key.map { alphabet[(alphabet.size - indexInAlphabet(it)) % alphabet.size] }.joinToString(""))
-    }
-
-    private fun indexInAlphabet(value: Char): Int {
-        return alphabet.indexOf(value)
-    }
-}
 
 fun main() {
-    val alphabet = ('A'..'Z').toList()
-
     val scanner = Scanner(System.`in`)
     print("Input text: ")
     val text = scanner.nextLine().toUpperCase()
     print("Input key: ")
     val key = scanner.nextLine().toUpperCase()
 
-    val encryptor = VigenereEncryptor(alphabet)
+    val encryptor : Cipher = VigenereEncryptor(key)
 
-    val encoded = encryptor.encode(text, key)
+    val encoded = encryptor.encode(text)
     println("Encoded text: $encoded")
 
-    val decoded = encryptor.decode(encoded, key)
+    val decoded = encryptor.decode(encoded)
     println("Decoded text: $decoded")
 }
