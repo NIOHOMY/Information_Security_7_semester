@@ -1,10 +1,7 @@
 package lab2
 
 import common.ciphers.Cipher
-import lab2.Cipher.VigenereEncryptor
 import java.util.*
-
-
 
 fun main() {
     val scanner = Scanner(System.`in`)

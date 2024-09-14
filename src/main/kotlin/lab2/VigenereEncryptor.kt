@@ -1,4 +1,4 @@
-package lab2.Cipher
+package lab2
 
 import common.ciphers.Cipher
 
