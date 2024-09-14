@@ -1,6 +1,6 @@
 package lab2.Cipher
 
-import lab1.Cipher.Cipher
+import common.ciphers.Cipher
 
 class VigenereEncryptor(private val key: String) : Cipher {
 

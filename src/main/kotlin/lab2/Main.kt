@@ -1,6 +1,6 @@
 package lab2
 
-import lab1.Cipher.Cipher
+import common.ciphers.Cipher
 import lab2.Cipher.VigenereEncryptor
 import java.util.*
 
