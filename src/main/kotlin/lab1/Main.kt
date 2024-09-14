@@ -1,7 +1,7 @@
 package labs.com.lab1
 
-import lab1.Cipher.Cipher
-import lab1.Cipher.ShuffleCipher
+import common.ciphers.Cipher
+import lab1.ShuffleCipher
 
 fun readKey() : List<Int> {
     return readLine()!!.split(" ").map { it.toInt() }

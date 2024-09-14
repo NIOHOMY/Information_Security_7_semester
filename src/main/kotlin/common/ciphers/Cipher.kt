@@ -1,4 +1,4 @@
-package lab1.Cipher
+package common.ciphers
 
 interface Cipher {
 
