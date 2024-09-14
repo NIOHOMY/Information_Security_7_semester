@@ -1,4 +1,6 @@
-package lab1.Cipher
+package lab1
+
+import common.ciphers.Cipher
 
 class ShuffleCipher(
     private val key1: List<Int>,
