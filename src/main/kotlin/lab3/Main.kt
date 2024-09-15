@@ -95,7 +95,7 @@ fun main() {
     val q: Int = readlnOrNull()?.toInt() ?: 0
 
     val (publicKey, privateKey) = generateKeyPair(p, q)
-    println("Public key: $publicKey; Private key: $privateKey")
+    println("Public key: $publicKey; Secret key: $privateKey")
 
     print("Input text: ")
     val text = readlnOrNull() ?: ""
