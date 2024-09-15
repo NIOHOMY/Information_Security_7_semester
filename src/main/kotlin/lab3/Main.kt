@@ -64,9 +64,9 @@ fun generateKeyPair(p: Int, q: Int): Pair<Pair<Int, Int>, Pair<Int, Int>> {
     val n = p * q
     val phi = (p - 1) * (q - 1)
     val e = generateSequence(2) { it + 1 }.first { findGreatestCommonDivisor(it, phi) == 1 }
-    val (findGreatestCommonDivisor, x, _) = findGreatestCommonDivisorAsLinearCombination(e, phi)
+    val (foundGCD, x, _) = findGreatestCommonDivisorAsLinearCombination(e, phi)
     val d =
-        if (findGreatestCommonDivisor == 1) (x % phi + phi) % phi else throw IllegalArgumentException("No modular inverse exists")
+        if (foundGCD == 1) (x % phi + phi) % phi else throw IllegalArgumentException("No modular inverse exists")
     return Pair(Pair(e, n), Pair(d, n))
 }
 
